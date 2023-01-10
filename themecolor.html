@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="themecolor.css">
+    <!-- Boxicons CSS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="container">
+        <div class="container-child">
+
+            <div class="content">
+                <div class="text">
+                    <i class='bx bxl-react'></i>
+                <h1>Muhammad Atick</h1>
+                </div>
+                <ul class="list">
+                    <li class="list-item">Home</li>
+                    <li class="list-item">About</li>
+                    <li class="list-item">Skills</li>
+                    <li class="list-item">Services</li>
+                    <li class="list-item">Contact</li>
+                </ul>
+                
+                <div class="icon-mode">
+                    <p class="first same">
+                        <i class='bx bx-sun'></i>
+                        <i class='bx bxs-moon' ></i>
+                    </p>
+                    <p class="second same"  onclick="printfuntion() ">
+                        <i class='bx bxs-palette'></i>
+                         <i class='bx bxs-up-arrow'></i>
+                    </p>
+                    <div class="colroone">
+                        <p id="pbar">Color Swithcer</p>
+                        <div class="color">
+                        <span class="btn purple" id="btn" onclick="purplefun() " ></span>
+                        <span class="btn black active" id="btn" onclick="blackfun() "></span>
+                        <span class="btn orange" onclick="orangefuntion() "></span>
+                        <span class="btn yellow" onclick="alertfun() "></span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container2">
+        <div class="container2child">
+            <h1>Custmize Your Website</h1>
+        <h1>With a <span> Beautiful Colours</span></h1>
+        <p id="pbar2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quasi harum similique commodi rerum exercitationem reprehenderit molestias pariatur deleniti quo? Repudiandae enim quo suscipit officiis?</p>
+        <button id="buttonid">
+            <p>Expore Me</p>
+            <i class='bx bxs-chevron-right-circle'></i>
+        </button>
+        </div>
+        <div class="image">
+            <img src="/Landing-page/undraw_multitasking_re_ffpb.svg" alt="">
+        </div>
+    </div>
+    <script>
+        let colorbox = document.querySelector(".colroone")
+        let arrow = document.querySelector(".bxs-up-arrow")
+        printfuntion = () => {
+            colorbox.classList.toggle("atick")
+            arrow.classList.toggle("cretearrow")
+        }
+
+        // let bottonid = document.getElementById("btn")
+        let botton = document.getElementsByClassName("btn")
+        for (let bottonclass of botton) {
+            
+            bottonclass.addEventListener("click" , (e) => {
+                let atick = document.querySelector(".atick")
+                let activevai = document.querySelector(".active")
+                
+                let target = e.target
+                // botton.classList.add("atickvai")
+                console.log(target);
+                if (colorbox.classList.contains("atick"))
+                colorbox.classList.remove("atick")
+                console.log("atick");
+
+                activevai.classList.remove("active")
+                
+                target.classList.add("active")
+            })
+            
+        }
+
+        const orangefuntion = () => {
+            let container = document.querySelector(".container")
+            let containertwo = document.querySelector(".container2")
+
+            container.classList.add("containercrete")
+            containertwo.classList.add("contwocrete")
+            container.classList.remove("containercreteblack")
+            containertwo.classList.remove("contwocreteblack")
+        }
+        const blackfun = () => {
+            let container = document.querySelector(".container")
+            let containertwo = document.querySelector(".container2")
+
+            container.classList.add("containercreteblack")
+            containertwo.classList.add("contwocreteblack")
+            container.classList.remove("containercrete")
+            containertwo.classList.remove("contwocrete")
+        }
+        const purplefun = () => {
+            let container = document.querySelector(".container")
+            let containertwo = document.querySelector(".container2")
+
+            container.classList.remove("containercreteblack")
+            containertwo.classList.remove("contwocreteblack")
+            container.classList.remove("containercrete")
+            containertwo.classList.remove("contwocrete")
+            
+        }
+        const alertfun = () => {
+            alert("So sorry , There have n't any theme")
+        }
+
+</script>
+
+
+</body>
+</html>
